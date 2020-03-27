@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body class="bg-light">
@@ -21,13 +21,12 @@
   <main class="container-fluid">
     <div class="row">
       <div class="col-12">
-        <form>
-          <form class="form-inline" onsubmit="app.listController.create(event)">
-            <label class="sr-only" for="inlineFormInputName2">Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 w-25 border border-primary rounded"
-              id="inlineFormInputName2" placeholder="List name...">
-            <button type="submit" class="btn btn-primary mb-2">Create</button>
-          </form>
+        <form class="form-inline" onsubmit="app.listController.create(event)">
+          <label class="sr-only" for="title">Name</label>
+          <input type="text" class="form-control mb-2 mr-sm-2 w-25 border border-primary rounded" name="title"
+            placeholder="List name...">
+          <button type="submit" class="btn btn-primary mb-2">Create</button>
+        </form>
       </div>
     </div>
     <!--Inject list cards here-->
@@ -35,12 +34,10 @@
       <div class="col-4">
         <div class="card" style="width: 18rem;">
           <div class="card-header bg-dark text-white">
-            Featured
+            <span>List Name</span>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <!--<li class="list-group-item">Task</li>-->
             <div class="input-group mb-3 mt-3">
               <input type="text" class="form-control" placeholder="Add task..." aria-label="Recipient's username"
                 aria-describedby="button-addon2">
@@ -103,7 +100,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
       </script>
-      <script src="app/main.js"></script>
+      <script src="app/main.js" type="module"></script>
 </body>
 
 </html>
