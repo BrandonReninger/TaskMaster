@@ -14,8 +14,8 @@ export default class List {
 
   get Template() {
     return /*html*/ `
-    <div class="col-4 border border-dark rounded shadow ml-3">
-        <h3 class="text center">${this.title}</h3>
+    <div class="col-3 border border-dark rounded shadow ml-3">
+        <h3 class="text-center">${this.title}</h3>
         <form onsubmit="app.listController.addList(event, '${this.id}')">
           <div class="form-group">
             <label for="taskName"></label>
@@ -23,9 +23,9 @@ export default class List {
             <button class="btn btn-lg btn-primary"></button>
           </div>
         </form>
-        <ul>
-        <li>${this.task}</li>
-        </ul>
+        <dl>
+        <dd>${this.task}</dd>
+        </dl>
       </div>
     
     `
