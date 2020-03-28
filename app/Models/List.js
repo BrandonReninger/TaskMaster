@@ -14,23 +14,20 @@ export default class List {
 
   get Template() {
     return /*html*/ `
-    <div class="col-4">
-        <div class="card" style="width: 18rem;">
-          <div class="card-header bg-dark text-white">
-            <h3>${this.title}</h3>
+    <div class="col-4 border border-dark rounded shadow ml-3">
+        <h3 class="text center">${this.title}</h3>
+        <form onsubmit="app.listController.addList(event, '${this.id}')">
+          <div class="form-group">
+            <label for="taskName"></label>
+            <input type="text" name="taskName" class="form-control" placeholder="Enter new task here...">
+            <button class="btn btn-lg btn-primary"></button>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">${this.task}</li>
-            <div class="input-group mb-3 mt-3">
-            <label for="task"></label>
-              <input type="text" name="task" class="form-control" placeholder="Add task...">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Add</button>
-              </div>
-            </div>
-          </ul>
-        </div>
+        </form>
+        <ul>
+        <li>${this.task}</li>
+        </ul>
       </div>
+    
     `
 
   }
