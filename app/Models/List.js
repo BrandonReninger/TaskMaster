@@ -17,16 +17,19 @@ export default class List {
   get Template() {
     return /*html*/ `
     <div class="col-3 border border-dark rounded shadow ml-3">
+    <button type="button" class="close text-danger" onclick="app.listController.delete('${this.id}')">
+      <span>&times;</span>
+      </button>
         <h3 class="text-center">${this.title}</h3>
-        <form onsubmit="app.listController.addList(event, '${this.id}')">
+        <form onsubmit="app.listController.addNewTask(event, '${this.id}')">
           <div class="form-group">
             <label for="taskName"></label>
             <input type="text" name="taskName" class="form-control" placeholder="Enter new task here...">
-            <button class="btn btn-lg btn-primary"></button>
+            <button class="btn btn-sm btn-primary">+</button>
           </div>
         </form>
         <dl>
-        ${this.tasks}
+        ${this.Tasks}
         </dl>
       </div>
     
