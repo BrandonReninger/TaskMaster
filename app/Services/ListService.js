@@ -1,5 +1,6 @@
 import List from "../Models/List.js";
 import _store from "../store.js"
+import Task from "../Models/Task.js";
 
 //Public
 class ListService {
@@ -9,7 +10,11 @@ class ListService {
   //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
   //ANCHOR start here saturday
   addNewTask(newTaskData, ListId) {
-
+    let newTask = new Task(newTaskData);
+    let list = _store.State.lists.find(list => list.id == ListId)
+    list.tasks.push(newTask)
+    console.log(list)
+    _store.saveState()
   }
 
   create(newListData) {

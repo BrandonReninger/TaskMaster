@@ -26,12 +26,18 @@ export default class List {
           </div>
         </form>
         <dl>
-        <dd>${this.tasks}</dd>
+        ${this.tasks}
         </dl>
       </div>
     
     `
 
+  }
+
+  get Tasks() {
+    let template = ""
+    this.tasks.forEach(task => template += task.getTemplate(this.id))
+    return template
   }
 
 }
