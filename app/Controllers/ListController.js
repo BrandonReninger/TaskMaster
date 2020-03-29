@@ -42,6 +42,7 @@ export default class ListController {
 
     ListService.create(newList)
     _drawLists()
+    formData.reset()
   }
 
   addNewTask(event, listId) {

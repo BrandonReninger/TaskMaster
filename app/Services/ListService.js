@@ -6,8 +6,10 @@ import Task from "../Models/Task.js";
 //ANCHOR start here Sunday
 class ListService {
   deleteTask(taskId) {
-    let index = _store.State.lists.findIndex(task => task.id == taskId)
-    _store.State.
+    let index = _store.State.findIndex(list => list.id == taskId)
+    _store.State.tasks.splice(index, 1)
+
+    _store.saveState()
   }
 
   delete(listId) {

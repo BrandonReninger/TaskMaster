@@ -32,7 +32,7 @@ class Store {
   }
 }
 
-_loadState();
+
 
 const store = new Store();
 export default store;
