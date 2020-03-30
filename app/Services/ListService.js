@@ -10,7 +10,7 @@ class ListService {
   deleteTask(listId, taskId) {
     if (window.confirm("Are you sure you want to delete?")) {
       let myList = _store.State.lists.find(list => list.id == listId)
-      let taskIndex = lists.tasks.findIndex(task => task.id == taskId)
+      let taskIndex = myList.tasks.findIndex(task => task.id == taskId)
       myList.tasks.splice(taskIndex, 1)
     }
 
