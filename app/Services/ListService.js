@@ -5,12 +5,13 @@ import Task from "../Models/Task.js";
 //Public
 //ANCHOR start here Sunday
 class ListService {
-
-  deleteTask(taskId, listId) {
+  //replace listId with myList
+  //splice needs an index
+  deleteTask(listId, taskId) {
     if (window.confirm("Are you sure you want to delete?")) {
       let myList = _store.State.lists.find(list => list.id == listId)
-      let myTask = listId.tasks.findIndex(task => task.id == taskId)
-      listId.task.splice(taskId, 1)
+      let taskIndex = lists.tasks.findIndex(task => task.id == taskId)
+      myList.tasks.splice(taskIndex, 1)
     }
 
     _store.saveState()
@@ -21,7 +22,6 @@ class ListService {
       let index = _store.State.lists.findIndex(list => list.id == listId)
       _store.State.lists.splice(index, 1)
     }
-
 
     _store.saveState()
   }
@@ -36,7 +36,7 @@ class ListService {
 
   create(newListData) {
     let newList = new List(newListData)
-    _store.State.lists.push(newListData)
+    _store.State.lists.push(newList)
     console.log(newListData)
     _store.saveState()
   }
