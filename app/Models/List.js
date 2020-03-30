@@ -22,11 +22,13 @@ export default class List {
       </button>
         <h3 class="text-center">${this.title}</h3>
         <form onsubmit="app.listController.addNewTask(event, '${this.id}')">
-          <div class="form-group">
-            <label for="taskName"></label>
-            <input type="text" name="taskName" class="form-control" placeholder="Enter new task here...">
-            <button class="btn btn-sm btn-primary">+</button>
-          </div>
+          <div class="input-group mb-3">
+          <label for="taskName"></label>
+  <input type="text" class="form-control" placeholder="Enter new task here..." name="taskName">
+  <div class="input-group-append">
+    <button class="btn btn-sm bg-primary text-white" type="submit" id="button-addon2">+</button>
+  </div>
+</div>
         </form>
         <dl>
         ${this.Tasks}

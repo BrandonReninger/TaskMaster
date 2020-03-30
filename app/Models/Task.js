@@ -14,7 +14,7 @@ export default class Task {
       <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${listId}','${this.id}')">
       <span>&times;</span>
       </button>
-      <h5>${this.title}</h5>
+      <h5 class= "bg-white shadow-sm text-center">${this.title}</h5>
       </dd>
       `
     }
