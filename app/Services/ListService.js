@@ -7,16 +7,20 @@ import Task from "../Models/Task.js";
 class ListService {
 
   deleteTask(taskId, listId) {
-    let myList = _store.State.lists.find(list => list.id == listId)
-    let myTask = listId.tasks.findIndex(tasks => tasks.id == taskId)
-    listId.tasks.splice(taskId, 1)
+    if (window.confirm("Are you sure you want to delete?")) {
+      let myList = _store.State.lists.find(list => list.id == listId)
+      let myTask = listId.tasks.findIndex(task => task.id == taskId)
+      listId.task.splice(taskId, 1)
+    }
 
     _store.saveState()
   }
 
   delete(listId) {
-    let index = _store.State.lists.findIndex(list => list.id == listId)
-    _store.State.lists.splice(index, 1)
+    if (window.confirm("Are you sure you want to delete?")) {
+      let index = _store.State.lists.findIndex(list => list.id == listId)
+      _store.State.lists.splice(index, 1)
+    }
 
 
     _store.saveState()
